@@ -3,13 +3,20 @@ return {
   -- │ Colorscheme │
   -- └─────────────┘
   {
-    'Mofiqul/adwaita.nvim',
+    'ThorstenRhau/token',
+    -- 'projekt0n/github-nvim-theme',
+    -- 'Mofiqul/adwaita.nvim',
+
     lazy = false,
     priority = 1000,
 
     config = function()
       -- apply the colorscheme
-      vim.cmd 'colorscheme adwaita'
+
+      vim.cmd 'colorscheme token'
+      -- vim.cmd 'colorscheme github_light'
+      -- vim.cmd 'colorscheme adwaita'
+
       vim.o.background = 'light'
 
       -- ┌─────────┐
@@ -32,23 +39,24 @@ return {
       -- ┌──────────┐
       -- │ Terminal │
       -- └──────────┘
-      -- set terminal colors (ptyxis gnome.palette)
-      vim.g.terminal_color_0 = '#1d1d20'
-      vim.g.terminal_color_1 = '#c01c28'
-      vim.g.terminal_color_2 = '#26a269'
-      vim.g.terminal_color_3 = '#a2734c'
-      vim.g.terminal_color_4 = '#12488b'
-      vim.g.terminal_color_5 = '#a347ba'
-      vim.g.terminal_color_6 = '#2aa1b3'
-      vim.g.terminal_color_7 = '#cfcfcf'
-      vim.g.terminal_color_8 = '#5d5d5d'
-      vim.g.terminal_color_9 = '#f66151'
-      vim.g.terminal_color_10 = '#33d17a'
-      vim.g.terminal_color_11 = '#e9ad0c'
-      vim.g.terminal_color_12 = '#2a7bde'
-      vim.g.terminal_color_13 = '#c061cb'
-      vim.g.terminal_color_14 = '#33c7de'
-      vim.g.terminal_color_15 = '#ffffff'
+      -- https://gitlab.gnome.org/chergert/ptyxis/-/blob/main/src/palettes/Tomorrow.palette
+      -- Ptyxis Tomorrow
+      vim.g.terminal_color_0 = '#000000'
+      vim.g.terminal_color_1 = '#C82828'
+      vim.g.terminal_color_2 = '#718C00'
+      vim.g.terminal_color_3 = '#EAB700'
+      vim.g.terminal_color_4 = '#4171AE'
+      vim.g.terminal_color_5 = '#8959A8'
+      vim.g.terminal_color_6 = '#3E999F'
+      vim.g.terminal_color_7 = '#FFFEFE'
+      vim.g.terminal_color_8 = '#000000'
+      vim.g.terminal_color_9 = '#C82828'
+      vim.g.terminal_color_10 = '#708B00'
+      vim.g.terminal_color_11 = '#E9B600'
+      vim.g.terminal_color_12 = '#4170AE'
+      vim.g.terminal_color_13 = '#8958A7'
+      vim.g.terminal_color_14 = '#3D999F'
+      vim.g.terminal_color_15 = '#FFFEFE'
 
       vim.api.nvim_create_autocmd({ 'ColorScheme', 'LspAttach' }, {
         callback = function()
