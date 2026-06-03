@@ -127,11 +127,11 @@ return {
         desc = 'Prompt',
       },
       {
-        '<leader>ag',
+        '<leader>ao',
         function()
-          require('sidekick.cli').toggle { name = 'gemini', focus = true }
+          require('sidekick.cli').toggle { name = 'opencode', focus = true }
         end,
-        desc = 'Gemini',
+        desc = 'OpenCode',
       },
     },
   },

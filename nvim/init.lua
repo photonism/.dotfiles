@@ -8,13 +8,9 @@
 --  │   - locale-gen                                                           │
 --  │                                                                          │
 --  │ install the dependencies:                                                │
---  │   - pacman -S neovim git base-devel stow yarn nnn fzf lazygit tmux       │
+--  │   - pacman -S neovim git base-devel stow yarn nnn fzf lazygit opencode ripgrep tmux
 --  │   - git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si │
 --  │   - yay -S pandoc-bin                                                    │
---  │                                                                          │
---  │ install node modules:                                                    │
---  │   - npm install --prefix ~/.opt/gemini -g @google/gemini-cli             │
---  │   - ln -s ~/.opt/gemini/bin/gemini ~/.local/bin/gemini                   │
 --  │                                                                          │
 --  │ apply the config:                                                        │
 --  │   - git clone https://github.com/photonism/.dotfiles.git ~/.dotfiles     │
