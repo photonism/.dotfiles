@@ -292,25 +292,30 @@ vim.api.nvim_create_autocmd('FileType', {
     end, { desc = 'Move Clozes', buffer = event.buf, silent = true })
 
     vim.keymap.set('n', '<leader>cy', function()
-      local buffer_content = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-      if not buffer_content or #buffer_content == 0 then
-        vim.notify('Buffer is empty, nothing to convert.', vim.log.levels.WARN)
+      local filepath = vim.api.nvim_buf_get_name(0)
+
+      while filepath == '' do
+        vim.notify('No filename detected. Save buffer before proceeding.', vim.log.levels.WARN)
         return
       end
-      local content_string = table.concat(buffer_content, '\n')
+
+      if vim.bo.modified and vim.fn.confirm('Save buffer changes?', '&Yes\n&No', 2, 'Warning') == 1 then
+        vim.cmd 'write'
+      end
+
       local pandoc_cmd = {
         'pandoc',
+        filepath,
         '--from=markdown',
         '--to=html',
-        '-o',
-        '-',
         '--katex',
         '--columns',
         '10000',
       }
+
       vim.notify('Running Pandoc...', vim.log.levels.INFO)
+
       vim.system(pandoc_cmd, {
-        stdin = content_string,
         text = true,
       }, function(result)
         vim.schedule(function()
@@ -325,9 +330,7 @@ vim.api.nvim_create_autocmd('FileType', {
             if result.stdout and #result.stdout > 0 then
               error_message = error_message .. '\n---[Stdout]---\n' .. result.stdout
             end
-            vim.notify(error_message, vim.log.levels.ERROR, {
-              title = 'Pandoc Error',
-            })
+            vim.notify(error_message, vim.log.levels.ERROR, { title = 'Pandoc Error' })
           end
         end)
       end)
