@@ -42,7 +42,8 @@ History - Ctrl + H
 Chatbot - Ctrl + Shift + X
 Sidebery - Ctrl + E
 */
-#sidebar-box #sidebar-header {
+#sidebar-box #sidebar-header,
+#webextpanels-window #sidebar-panel-header {
 	display: none !important;
 }
 
@@ -55,6 +56,12 @@ Sidebery - Ctrl + E
 :root:has(#tabbrowser-tabs .tabbrowser-tab:only-of-type),
 #main-window[titlepreface*="◌ "] {
 	& #TabsToolbar {
+		display: none !important;
+	}
+}
+
+:root:has(#tabbrowser-tabs .tabbrowser-tab:only-of-type) {
+	& #sidebar-main {
 		display: none !important;
 	}
 }
