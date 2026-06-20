@@ -43,9 +43,8 @@ export VISUAL="${_BIN_PATH}/nvim"
 
 export NNN_TRASH=1
 
-export QT_STYLE_OVERRIDE=kvantum
-
 if [ "$XDG_SESSION_TYPE" = 'wayland' ]; then
+    export QT_STYLE_OVERRIDE=kvantum
     export QT_QPA_PLATFORM=wayland
     export QT_WAYLAND_DECORATION=adwaita
 fi
