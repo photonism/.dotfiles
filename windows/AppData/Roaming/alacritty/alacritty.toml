@@ -6,7 +6,7 @@ opacity = 0.9
 history = 100000
 
 [font]
-normal = { family = 'Iosevka Nerd Font', style = 'Regular' }
+normal = { family = 'IosevkaTermSlab Nerd Font', style = 'Regular' }
 
 [colors]
 transparent_background_colors = true

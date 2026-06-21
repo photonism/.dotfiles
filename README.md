@@ -65,7 +65,7 @@ scoop bucket add main
 scoop bucket add extras
 scoop bucket add nerd-fonts
 
-scoop install fzf git lazygit neovide neovim nodejs pandoc psmux psutils refreshenv ripgrep stylua yarn Iosevka-NF Noto-CJK-Mega-OTC
+scoop install fzf git lazygit neovide neovim nodejs pandoc psmux psutils refreshenv ripgrep stylua yarn Iosevka-NF IosevkaTermSlab-NF Noto-CJK-Mega-OTC
 npm install --prefix $env:USERPROFILE\.opt\gemini -g @google/gemini-cli
 
 if (-not ($env:PATH -like "*$env:USERPROFILE\.local\bin*")) { .\windows\.local\bin\setenv.ps1 PATH "$env:USERPROFILE\.local\bin;$env:PATH" }
