@@ -12,7 +12,7 @@ dialogChangeDir() {
 
 getPWD() {
 	REAL_PWD=$(pwd -P)
-	ROOTFS_PATH="$PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu"
+	ROOTFS_PATH="$PREFIX/var/lib/proot-distro/containers/ubuntu/rootfs"
 	SDCARD_PATH="/storage/emulated/0"
 	if [[ "$REAL_PWD" == "$ROOTFS_PATH"* ]]; then
 		GUEST_PWD="${REAL_PWD#$ROOTFS_PATH}"
@@ -76,13 +76,15 @@ while true; do
 	clear
 
 	case $DIALOG_EXIT_CODE in
-	0)
+	0)  # OK
 		if [ -n "$CHOICE" ]; then
 			"${file_map[$CHOICE]}"
+			sleep 0.2
+			clear
 			read -p "Press Enter to return to the menu..."
 		fi
 		;;
-	3)
+	3)  # Path..
 		while true; do
 			NEW_DIR=$(dialogChangeDir "Select Path" "Home..")
 			DSELECT_EXIT_CODE=$?
@@ -107,7 +109,7 @@ while true; do
 			fi
 		done
 		;;
-	*)
+	*)  # Cancel
 		echo "Welcome to Termux!"
 		break
 		;;
