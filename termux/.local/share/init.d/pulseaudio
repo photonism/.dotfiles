@@ -1,0 +1,52 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          pulseaudio
+# Required-Start:    $local_fs
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: PulseAudio sound server
+### END INIT INFO
+
+start() {
+	if pulseaudio --check; then
+		echo "PulseAudio is already running."
+	else
+		echo "Starting PulseAudio..."
+		termux-wake-lock
+		# config file: ~/.config/pulse/default.pa
+		pulseaudio --start --exit-idle-time=-1
+		echo "PulseAudio started on port 47113."
+	fi
+}
+
+stop() {
+	if pulseaudio --check; then
+		pulseaudio -k 2>/dev/null
+		killall -9 pulseaudio 2>/dev/null
+		echo "PulseAudio stopped."
+	else
+		echo "PulseAudio is not running."
+	fi
+}
+
+status() {
+	if pulseaudio --check; then
+		echo "PulseAudio is RUNNING."
+	else
+		echo "PulseAudio is STOPPED."
+	fi
+}
+
+case "$1" in
+start) start ;;
+stop) stop ;;
+restart)
+	stop
+	sleep 1
+	start
+	;;
+status) status ;;
+*) echo "Usage: $0 {start|stop|restart|status}" ;;
+esac
