@@ -17,7 +17,28 @@ return {
       -- vim.cmd 'colorscheme github_light'
       -- vim.cmd 'colorscheme adwaita'
 
-      vim.o.background = 'light'
+      -- ┌────────┐
+      -- │ Termux │
+      -- └────────┘
+      -- disable italic in termux-cli
+      local is_termux = vim.fn.isdirectory '/data/data/com.termux/files/usr' == 1
+      local no_gui = vim.fn.getenv 'DISPLAY' == vim.NIL and vim.fn.getenv 'WAYLAND_DISPLAY' == vim.NIL
+
+      if is_termux and no_gui then
+        vim.api.nvim_create_autocmd({ 'ColorScheme', 'UIEnter' }, {
+          callback = function()
+            for hlname, def in pairs(vim.api.nvim_get_hl(0, {})) do
+              if def.italic or (def.cterm and def.cterm.italic) then
+                local modified = vim.tbl_deep_extend('force', def, {
+                  italic = false,
+                  cterm = { italic = false },
+                })
+                vim.api.nvim_set_hl(0, hlname, modified)
+              end
+            end
+          end,
+        })
+      end
 
       -- ┌─────────┐
       -- │ Neovide │
@@ -32,6 +53,7 @@ return {
         else
           vim.o.guifont = 'Iosevka Nerd Font,Adwaita Mono,Noto Sans CJK JP:h11'
         end
+        vim.o.background = 'light'
         vim.g.neovide_opacity = 0.9
         vim.g.neovide_cursor_short_animation_length = 0.04
       end
