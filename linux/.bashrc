@@ -126,7 +126,7 @@ nds() {
 # │ fzf │
 # └─────┘
 
-eval "$(fzf --bash)"
+# eval "$(fzf --bash)"
 
 # ┌─────────────────┐
 # │ bash-completion │
