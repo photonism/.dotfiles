@@ -31,11 +31,11 @@ Linux CLI configuration, including:
 To use these configs in linux:
 
 ```bash
-mkdir -p ~/.local/bin ~/.local/share/applications ~/.config ~/.config/musikcube
+mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/fcitx5 ~/.config ~/.config/musikcube
 rm ~/.config/lazygit/config.yml
 stow linux
 
-sudo mkdir -p /root/.local/bin /root/.local/share/applications /root/.config /root/.config/musikcube
+sudo mkdir -p /root/.local/bin /root/.local/share/applications /root/.local/share/fcitx5 /root/.config /root/.config/musikcube
 sudo rm /root/.config/lazygit/config.yml
 sudo stow -t /root linux
 ```
