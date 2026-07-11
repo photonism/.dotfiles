@@ -1,5 +1,23 @@
 return {
   -- ┌─────────────┐
+  -- │ Transparent │
+  -- └─────────────┘
+  {
+    'xiyaowong/transparent.nvim',
+    config = function()
+      require('transparent').setup {
+        groups = {
+          'Normal',
+          'NormalNC',
+        },
+        extra_groups = {},
+        exclude_groups = {},
+        on_clear = function() end,
+      }
+      vim.g.transparent_enabled = true
+    end,
+  },
+  -- ┌─────────────┐
   -- │ Colorscheme │
   -- └─────────────┘
   {
