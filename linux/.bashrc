@@ -41,6 +41,8 @@ export SHELL="${_BIN_PATH}/bash"
 export EDITOR="${_BIN_PATH}/nvim"
 export VISUAL="${_BIN_PATH}/nvim"
 
+export LANG=en_US.UTF-8
+
 export NNN_TRASH=1
 
 if [ "$XDG_SESSION_TYPE" = 'wayland' ]; then
