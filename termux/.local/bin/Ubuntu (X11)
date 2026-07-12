@@ -4,7 +4,7 @@
 kill -9 $(pgrep -f "termux.x11") 2>/dev/null
 
 # Start PulseAudio
-~/.local/share/init.d/pulseaudio start
+~/.local/share/init.d/pulseaudio restart
 
 # Prepare termux-x11 session
 export XDG_RUNTIME_DIR=${TMPDIR}
