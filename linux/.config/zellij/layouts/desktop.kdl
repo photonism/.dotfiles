@@ -9,7 +9,7 @@ layout {
                 tab_normal   " #[fg=8]{name} "
                 tab_active   " #[fg=0,bold]{name} "
 
-                mode_normal       "NORMAL"
+                mode_normal       ""
                 mode_locked       "LOCKED"
                 mode_pane         "PANE"
                 mode_tab          "TAB"
