@@ -1,117 +1,35 @@
-dialogSelect() {
-	dialog --title "$1" --extra-button --extra-label "$2" --menu "$3" 15 50 5 "${@:4}" 2>&1 >/dev/tty
-}
+termux-wake-lock
 
-dialogMsg() {
-	dialog --title "$1" --msgbox "$2" 8 50
-}
+# ┌─────────┐
+# │ searxng │
+# └─────────┘
 
-dialogChangeDir() {
-	dialog --title "$1" --extra-button --extra-label "$2" --dselect "$PWD/" 15 50 2>&1 >/dev/tty
-}
+SEARX_DIR="${HOME}/.opt/searxng"
 
-getPWD() {
-	REAL_PWD=$(pwd -P)
-	ROOTFS_PATH="$PREFIX/var/lib/proot-distro/containers/ubuntu/rootfs"
-	SDCARD_PATH="/storage/emulated/0"
-	if [[ "$REAL_PWD" == "$ROOTFS_PATH"* ]]; then
-		GUEST_PWD="${REAL_PWD#$ROOTFS_PATH}"
-		GUEST_PWD="${GUEST_PWD:-/}"
-	elif [[ "$REAL_PWD" == "$SDCARD_PATH"* ]]; then
-		GUEST_PWD="${REAL_PWD}"
-	else
-		GUEST_PWD="$PWD"
-	fi
-	echo "$GUEST_PWD"
-}
+source ${SEARX_DIR}/venv/bin/activate
+python ${SEARX_DIR}/searx/webapp.py >/dev/null 2>&1 &
 
-# --------------------------------------
+# ┌────────────┐
+# │ pulseaudio │
+# └────────────┘
 
-# ┌──────────┐
-# │ XDG Home │
-# └──────────┘
+pulseaudio -k 2>/dev/null
+killall -9 pulseaudio 2>/dev/null
+rm -rf ~/.config/pulse/*-runtime/pid 2>/dev/null
 
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+pulseaudio --exit-idle-time=-1 --realtime=false >/dev/null 2>&1 &
 
-export PATH="$HOME/.local/bin:$PATH"
+# ┌────────────┐
+# │ termux-x11 │
+# └────────────┘
 
-# ┌──────────┐
-# │ Services │
-# └──────────┘
+kill -9 $(pgrep -f "termux.x11") 2>/dev/null
 
-INIT_DIR="${XDG_DATA_HOME}/init.d"
+export XDG_RUNTIME_DIR=${TMPDIR}
+termux-x11 :0 >/dev/null &
 
-if [ -d "$INIT_DIR" ]; then
-	for script in "$INIT_DIR"/*; do
-		if [ -f "$script" ] && [ -x "$script" ]; then
-			. "$script" start >/dev/null 2>&1
-		fi
-	done
-fi
+# ┌──────────────┐
+# │ proot-distro │
+# └──────────────┘
 
-# ┌───────────┐
-# │ Main Menu │
-# └───────────┘
-
-while true; do
-	options=()
-	declare -A file_map
-	i=1
-
-	while IFS= read -r -d '' file; do
-		filename=$(basename "$file")
-		options+=("$i" "$filename") # Add tag and item as separate array elements
-		file_map[$i]="$file"        # Store the full path for execution later
-		((i++))
-	done < <(find -L "$HOME/.local/bin" -maxdepth 1 -type f -executable -print0)
-
-	clear
-
-	CHOICE=$(dialogSelect "Termux" "Path.." "$(getPWD):" "${options[@]}")
-	DIALOG_EXIT_CODE=$?
-
-	clear
-
-	case $DIALOG_EXIT_CODE in
-	0)  # OK
-		if [ -n "$CHOICE" ]; then
-			"${file_map[$CHOICE]}"
-			sleep 0.2
-			clear
-			read -p "Press Enter to return to the menu..."
-		fi
-		;;
-	3)  # Path..
-		while true; do
-			NEW_DIR=$(dialogChangeDir "Select Path" "Home..")
-			DSELECT_EXIT_CODE=$?
-			if [ $DSELECT_EXIT_CODE -eq 3 ]; then
-				cd "$HOME" || dialogMsg "Failed to Change Path" "$HOME"
-				if [ -x "${XDG_DATA_HOME}/init.d/lastd" ]; then
-					"${XDG_DATA_HOME}/init.d/lastd" save "$HOME" >/dev/null 2>&1
-				fi
-				continue
-			elif [ $DSELECT_EXIT_CODE -eq 0 ]; then
-				if [ -n "$NEW_DIR" ] && [ -d "$NEW_DIR" ]; then
-					cd "$NEW_DIR" || dialogMsg "Failed to Change Path" "$NEW_DIR"
-					if [ -x "${XDG_DATA_HOME}/init.d/lastd" ]; then
-						"${XDG_DATA_HOME}/init.d/lastd" save "$NEW_DIR" >/dev/null 2>&1
-					fi
-				else
-					dialogMsg "Invalid Path" "$NEW_DIR"
-				fi
-				break
-			else
-				break
-			fi
-		done
-		;;
-	*)  # Cancel
-		echo "Welcome to Termux!"
-		break
-		;;
-	esac
-done
+proot-distro login ubuntu --user nora --shared-tmp -- /bin/bash -c "cd '$(getPWD)' && /bin/bash"
