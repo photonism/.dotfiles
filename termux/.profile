@@ -32,4 +32,4 @@ termux-x11 :0 >/dev/null &
 # │ proot-distro │
 # └──────────────┘
 
-proot-distro login ubuntu --user nora --shared-tmp -- /bin/bash -c "cd '$(getPWD)' && /bin/bash"
+proot-distro login ubuntu --user nora --shared-tmp
