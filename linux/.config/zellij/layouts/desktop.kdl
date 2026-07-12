@@ -6,8 +6,8 @@ layout {
                 format_right  "#[fg=8]{mode}  {session}  "
                 format_space  ""
 
-                tab_normal   " #[bg=15,fg=8] {name} "
-                tab_active   " #[bg=15,fg=0,bold] {name} "
+                tab_normal   " #[fg=8] {name} "
+                tab_active   " #[fg=0,bold] {name} "
 
                 mode_normal       "NORMAL"
                 mode_locked       "LOCKED"
