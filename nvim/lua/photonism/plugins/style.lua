@@ -35,6 +35,8 @@ return {
       -- vim.cmd 'colorscheme github_light'
       -- vim.cmd 'colorscheme adwaita'
 
+      vim.o.background = 'light'
+
       -- ┌────────┐
       -- │ Termux │
       -- └────────┘
@@ -71,7 +73,6 @@ return {
         else
           vim.o.guifont = 'IosevkaTermSlab Nerd Font,Adwaita Mono,Noto Sans CJK JP:h11'
         end
-        vim.o.background = 'light'
         vim.g.neovide_opacity = 0.9
         vim.g.neovide_cursor_short_animation_length = 0.04
       end
