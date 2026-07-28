@@ -67,7 +67,7 @@ dialogProgress() {
 
 dialogSelect2x() {
 	if [ "$DIALOG_APP" == "zenity" ]; then
-		zenity --list --title="$1" --text="$2" --width=450 --height=300 --column="---" --column="Operation" "${@:3}" 2>/dev/null
+		zenity --list --title="$1" --text="$2" --width=450 --height=330 --column="---" --column="Operation" "${@:3}" 2>/dev/null
 	elif [ "$DIALOG_APP" == "dialog" ]; then
 		dialog --title "$1" --menu "$2" 15 60 4 "${@:3}" 3>&1 1>&2 2>&3
 	elif [ "$DIALOG_APP" == "whiptail" ]; then
