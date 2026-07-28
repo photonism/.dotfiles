@@ -53,15 +53,15 @@ Sidebery - Ctrl + E
 }
 
 /* Hide Tab Bar when sidebery is open / only one tab is open */
-:root:has(#tabbrowser-tabs .tabbrowser-tab:only-of-type),
+#main-window:not(:has(#pinned-tabs-container .tabbrowser-tab)):has(#tabbrowser-arrowscrollbox > .tabbrowser-tab:only-of-type),
 #main-window[titlepreface*="◌ "] {
 	& #TabsToolbar {
 		display: none !important;
 	}
 }
 
-:root:has(#tabbrowser-tabs .tabbrowser-tab:only-of-type) {
-	& #sidebar-main {
+#main-window:not(:has(#pinned-tabs-container .tabbrowser-tab)):has(#tabbrowser-arrowscrollbox > .tabbrowser-tab:only-of-type) {
+	& #sidebar-container {
 		display: none !important;
 	}
 }
