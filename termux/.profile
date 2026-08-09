@@ -15,7 +15,7 @@ python ${SEARX_DIR}/searx/webapp.py >/dev/null 2>&1 &
 
 pulseaudio -k 2>/dev/null
 killall -9 pulseaudio 2>/dev/null
-rm -rf ~/.config/pulse/*-runtime/pid 2>/dev/null
+rm -rf ~/.config/pulse/*/pid 2>/dev/null
 
 pulseaudio --exit-idle-time=-1 --realtime=false >/dev/null 2>&1 &
 
