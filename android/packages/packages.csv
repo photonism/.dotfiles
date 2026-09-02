@@ -1,0 +1,194 @@
+package,category,source,name,find_n3,phone,tab
+com.activitymanager,app_manager,droidify,Activity Manager,1,1,1
+com.apkupdater.ci,app_manager,droidify,APKUpdater,1,1,1
+com.looker.droidify,app_manager,droidify,Droid-ify,1,1,1
+dev.imranr.obtainium.fdroid,app_manager,droidify,Obtainium,1,1,1
+com.catchingnow.icebox,app_manager,play,Ice Box - Apps freezer,1,1,1
+com.taptap,app_manager,web,https://www.taptap.cn/download,1,0,0
+com.llamalab.automate,automation,play,Automate,1,0,0
+net.dinglisch.android.taskerm,automation,play,Tasker,1,0,0
+com.quark.browser,browser,cn,,1,1,0
+org.cromite.cromite,browser,obtainium,Cromite,1,1,1
+org.mozilla.firefox,browser,obtainium,Firefox,1,1,1
+com.mad.zenflipclock,clock,play,Zen Flip Clock,1,1,1
+com.tencent.wemeet.app,display,cn,,1,1,1
+youqu.android.todesk,display,cn,,1,1,1
+com.iiordanov.freeaRDP,display,droidify,aRDP Free,1,0,0
+com.gaurav.avnc,display,droidify,AVNC,1,0,0
+com.termux.x11,display,obtainium,Termux:X11,1,1,1
+com.chaoxing.mobile,education,cn,,1,0,0
+com.netease.edu.ucmooc,education,cn,,1,0,0
+org.gushiwen.gushiwen,education,cn,,1,1,1
+com.ichi2.anki,education,droidify,AnkiDroid: Flashcards,1,1,1
+com.wonder,education,play,Elevate - Brain Training Games,1,1,0
+com.fsck.k9,email,droidify,K-9 Mail,1,1,1
+com.chinamworld.bocmbci,finance,cn,,1,0,0
+com.icbc,finance,cn,,1,0,0
+com.binance.dev,finance,obtainium,Binance,1,1,0
+com.bybit.app,finance,obtainium,Bybit,1,1,0
+com.eg.android.AlipayGphone,finance,play,Alipay,1,1,0
+com.bitkeep.wallet,finance,play,"Bitget Wallet: Crypto, Bitcoin",1,1,0
+com.google.android.apps.walletnfcrel,finance,play,Google Wallet,1,0,0
+com.paypal.android.p2pmobile,finance,play,"PayPal - Pay, Send, Save",1,0,0
+com.unionpay,finance,play,UnionPay APP,1,1,1
+ru.playsoftware.j2meloader,game,droidify,J2ME Loader,1,0,0
+com.movtery.zalithlauncher.v2,game,obtainium,Zalith Launcher,1,0,0
+com.rovio.angrybirdsfriends,game,play,Angry Birds Friends,1,0,0
+com.gameloft.android.ANMP.GloftA9HM,game,play,Asphalt Legends - Racing Game,1,0,0
+org.hempuli.baba,game,play,Baba Is You,1,0,0
+com.rovio.BadPiggies,game,play,Bad Piggies,1,0,0
+com.pikpok.fr.play,game,play,Breakneck,1,0,0
+com.chess,game,play,Chess - Play and Learn Online,1,0,0
+com.bjsm.dungeonlabs,game,play,DG-LAB 3.0,1,0,0
+com.mediocre.commute,game,play,Does not Commute,1,0,0
+net.mobigame.edge,game,play,EDGE,1,0,0
+com.freegift.gd,game,play,Gravity Defied Pro,1,1,1
+com.badpotion.hyperburner,game,play,Hyperburner,1,0,0
+com.ustwo.monumentvalley,game,play,Monument Valley,1,0,0
+eu.bandainamcoent.pacman256,game,play,PAC-MAN 256 - Endless Maze,1,0,0
+com.pash.piano,game,play,Piano For You,1,0,0
+com.mediocre.pinout,game,play,PinOut,1,0,0
+air.hu.smartcode.projectalnilam,game,play,Project Alnilam,1,0,0
+com.cloudmosa.puffinFree,game,play,Puffin Web Browser,1,0,0
+com.retroarch.aarch64,game,play,RetroArch Plus,1,0,0
+brownmonster.app.game.rushrally3,game,play,Rush Rally 3,1,0,0
+com.mediocre.smashhit,game,play,Smash Hit,1,0,0
+com.rkgames.basisgame,game,play,Smashy Road: Wanted 2,1,0,0
+com.m4399.gamecenter,game,web,https://app.4399.cn/,1,0,0
+io.moreless.tide,health,play,Tide - Sleep & Meditation,1,1,1
+org.fcitx.fcitx5.android,input_method,droidify,Fcitx5,1,1,1
+org.fcitx.fcitx5.android.plugin.rime,input_method,droidify,Fcitx5 (RIME Plugin),1,1,1
+org.pocketworkstation.pckeyboard,input_method,droidify,Hacker's Keyboard,1,1,1
+com.google.android.inputmethod.latin,input_method,play,Gboard - the Google Keyboard,1,1,1
+com.farmerbb.taskbar,launcher,droidify,Taskbar,1,0,0
+net.pnhdroid.appsearch,launcher,play,App Search: Find apps fast,1,1,1
+bitpit.launcher,launcher,play,Niagara Launcher - Home Screen,1,0,0
+com.ss.squarehome2,launcher,play,Square Home,1,1,1
+com.ss.squarehome.key,launcher,play,Square Home Key,1,1,0
+com.deepseek.chat,llm,play,DeepSeek - AI Assistant,1,0,0
+com.google.android.apps.bard,llm,play,Google Gemini,1,1,0
+com.netease.cloudmusic,music,cn,,1,1,1
+com.tencent.karaoke,music,cn,,1,0,0
+com.tencent.qqmusic,music,cn,,1,0,0
+app.revanced.android.apps.youtube.music,music,obtainium,YT Music ReVanced,1,1,1
+com.foobar2000.foobar2000,music,play,foobar2000,0,1,0
+jp.ne.sakura.ccice.audipo,music,play,Music Speed Changer: Audipo,1,0,0
+com.baidu.netdisk,network,cn,,1,1,0
+com.github.metacubex.clash.meta,network,droidify,Clash Meta For Android,1,1,1
+org.proninyaroslav.libretorrent,network,droidify,LibreTorrent,1,1,0
+com.chiller3.rsaf,network,droidify,RSAF,1,1,1
+com.junkfood.seal,network,droidify,Seal,1,0,0
+com.prajwalch.torrentsearch,network,droidify,Torrent Search,1,1,0
+fr.gaulupeau.apps.InThePoche,network,droidify,wallabag,1,1,1
+dk.tacit.android.foldersync.lite,network,play,FolderSync,1,1,0
+com.smartisan.notes,note,cn,,1,1,1
+com.flexcil.flexcilnote,note,play,Flexcil Notes & PDF Reader,1,1,1
+md.obsidian,note,play,Obsidian,1,1,1
+io.heckel.ntfy,notification,droidify,ntfy - PUT/POST to your phone,1,1,1
+com.collabora.libreoffice,office,play,Collabora Office,1,1,1
+com.google.android.calendar,office,play,Google Calendar,1,1,0
+com.google.android.apps.docs,office,play,Google Drive,1,1,0
+com.google.android.apps.tasks,office,play,Google Tasks,1,1,0
+com.tencent.wework,office,play,WeCom,1,1,0
+com.shamim.cam,photo,cn,,1,0,0
+com.uzero.baimiao,photo,cn,,1,1,1
+com.xt.retouch,photo,cn,,1,0,0
+com.google.android.apps.photos,photo,droidify,Gcam Services Provider (Photos),1,1,0
+com.ilixa.ebp,photo,play,"8Bit Photo Lab, Retro Effects",1,0,0
+ua.com.compose.colorpicker.camera.image,photo,play,Color & Palette: Color Picker,1,1,0
+com.google.ar.lens,photo,play,Google Lens,1,1,0
+com.niksoftware.snapseed,photo,play,Snapseed,1,0,0
+com.douban.book.reader,reader,cn,,1,1,1
+org.koreader.launcher.fdroid,reader,droidify,KOReader,1,1,1
+com.xodo.pdf.reader,reader,play,PDF Reader & Editor: Xodo,1,1,1
+org.readera,reader,play,ReadEra - book reader pdf epub,1,1,1
+com.ktix007.talk,reader,play,Talk: Text to Voice,1,1,1
+com.ziroom.ziroomcustomer,real_estate,cn,,1,1,0
+com.zacharee1.systemuituner,rice,droidify,SystemUI Tuner,0,1,1
+com.bs.smarttouch.gp,rice,obtainium,J Touch,1,1,1
+com.sunshine.freeform,rice,obtainium,Mi-Freeform,0,1,1
+com.didjdk.adbhelper,rice,obtainium,甲壳虫ADB助手,1,1,1
+com.bandot.alexis.pie.iconpack,rice,play,Alexis Pie: Minimal Icon Pack,1,1,1
+flar2.homebutton,rice,play,Button Mapper: Remap your keys,1,1,1
+website.leifs.delta,rice,play,Delta Icon Pack,1,1,1
+com.lwi.android.flapps,rice,play,Floating Apps (multitasking),1,1,1
+com.applay.overlay,rice,play,Overlays - Floating Launcher,1,1,1
+com.atolphadev.quikshort,rice,play,Quikshort: Shortcut Creator,1,0,0
+maa.retrowave_vaporwave_wallpapers,rice,play,Retrowave HD Wallpapers,1,1,1
+net.mm2d.android.orientationfaker,rice,play,Screen Orientation Control,1,1,1
+rk.android.app.shortcutmaker,rice,play,Shortcut Maker,0,1,1
+net.dinglisch.android.appfactory,rice,play,Tasker App Factory,1,0,0
+org.geogebra.android.calculator.suite,science,play,GeoGebra Calculator Suite,1,1,1
+cz.hipercalc.pro,science,play,HiPER Calc Pro,1,1,1
+com.alextepl.molconstr,science,play,Molecular Constructor,1,1,1
+august.mendeleev.pro,science,play,Periodic Table 2025 PRO,1,1,1
+com.google.android.googlequicksearchbox,search,play,Google,1,0,0
+com.authenticator,security,binance,,1,1,1
+com.stratumauth.app,security,droidify,Stratum,1,1,1
+com.azure.authenticator,security,play,Microsoft Authenticator,1,1,1
+com.valvesoftware.android.steam.community,security,play,Steam,1,1,0
+com.manmanbuy.bijia,shopping,cn,,1,1,0
+com.taobao.etao,shopping,cn,,1,1,0
+com.dianping.v1,shopping,play,Dianping,1,1,0
+com.jingdong.app.mall,shopping,play,京东,1,1,0
+com.taobao.taobao,shopping,play,淘宝,1,1,0
+com.sankuai.meituan,shopping,play,美团-美好生活小帮手,1,1,0
+com.taobao.idlefish,shopping,play,闲鱼,1,1,0
+com.shanling.eddictplayer,smart_audio,play,Eddict Player,1,1,0
+com.edifier.edifierconnect,smart_audio,play,Edifier Connect,1,1,0
+com.sonova.chb.control,smart_audio,play,Sennheiser Smart Control Plus,1,1,0
+com.sony.songpal.mdr,smart_audio,play,Sony | Sound Connect,1,1,0
+com.givemefive.ebook,smart_band,bandbbs,,1,0,0
+com.givemefive.pics,smart_band,bandbbs,,1,0,0
+tech.pingx.watchface,smart_band,bandbbs,,1,0,0
+com.mi.health,smart_band,cn,,1,1,0
+org.kde.kdeconnect_tp,smart_connect,droidify,KDE Connect,1,1,1
+org.localsend.localsend_app,smart_connect,droidify,LocalSend,1,1,1
+com.github.catfriend1.syncthingfork,smart_connect,droidify,Syncthing-Fork,1,1,1
+io.appground.blekpremium,smart_connect,play,Bluetooth Keyboard & Mouse Pro,1,1,1
+com.xiaoji.xtouch.google,smart_connect,play,GameSir,1,0,0
+com.narwel.narwelrobots,smart_home,cn,,1,1,1
+com.picooc,smart_home,cn,,1,1,0
+com.xiaomi.smarthome,smart_home,cn,,1,1,0
+com.coolapk.market,social,cn,,1,1,1
+com.ss.android.ugc.aweme,social,cn,,1,1,0
+com.sspai.sspaiandroid,social,cn,,1,1,1
+com.tencent.mm,social,cn,,1,1,0
+com.tencent.mobileqq,social,cn,,1,1,0
+com.github.zly2006.zhplus,social,obtainium,Zhihu++,1,1,1
+com.gsmarena.android,social,play,GSMArena,1,1,1
+com.instagram.android,social,play,Instagram,1,1,0
+com.xingin.xhs,social,play,rednote,1,1,0
+org.telegram.messenger,social,play,Telegram,1,1,0
+com.twitter.android,social,play,X,1,1,0
+in.hridayan.ashell,terminal,droidify,aShell You,1,1,1
+com.termux,terminal,droidify,Termux,1,1,1
+com.termux.api,terminal,droidify,Termux:API,1,1,1
+com.chebada,travel,cn,,1,1,0
+com.MobileTicket,travel,cn,,1,1,0
+com.njusoft.taizhoutrip,travel,cn,,1,0,0
+com.rytong.ceair,travel,cn,,1,0,0
+com.umetrip.android.msky.app,travel,cn,,1,1,0
+com.autonavi.minimap,travel,play,AMap Global,1,1,0
+com.sdu.didi.psnger,travel,play,DiDi China: Ride Hailing,1,1,0
+com.iflyrec.tjapp,utility,cn,,1,0,0
+com.buzbuz.smartautoclicker,utility,droidify,Klick'r - Smart AutoClicker,1,1,0
+com.wchung.qrshare,utility,droidify,QRshare,1,1,1
+moe.shizuku.privileged.api,utility,droidify,Shizuku,1,1,1
+jp.ddo.hotmist.unicodepad,utility,droidify,UnicodePad,1,1,1
+com.wirelessalien.zipxtract,utility,droidify,ZipXtract,1,1,1
+com.github.axet.audiorecorder,utility,obtainium,Audio Recorder,1,1,1
+app.revanced.android.gms,utility,obtainium,microG Services,1,1,1
+com.finalwire.aida64,utility,play,AIDA64,1,0,0
+com.paragon.tcplugins_ntfs_ro,utility,play,exFAT/NTFS for USB by Paragon,1,1,1
+pl.solidexplorer2,utility,play,Solid Explorer File Manager,1,0,0
+com.google.android.tts,utility,play,Speech Recognition & Synthesis,1,1,1
+com.lonelycatgames.Xplore,utility,play,X-plore File Manager,1,1,1
+org.xbmc.kodi,video,droidify,Kodi,1,1,0
+InfinityLoop1309.NewPipeEnhanced,video,droidify,PipePipe,1,1,1
+org.videolan.vlc,video,droidify,VLC,1,1,1
+com.example.piliplus,video,obtainium,PiliPlus,1,1,1
+app.morphe.android.youtube,video,obtainium,YouTube Morphe,1,1,1
+com.wondershare.filmorago,video,play,Filmora: AI Video Editor&Maker,1,0,0
+tv.twitch.android.app,video,play,Twitch: Live Streaming,1,0,0
+tv.danmaku.bili,video,play,哔哩哔哩-弹幕动画直播高清视频,1,0,0
