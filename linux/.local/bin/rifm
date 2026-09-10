@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# rifm — run shfm through rish (Shizuku) to browse directories the terminal
+#        app cannot read, like /storage/emulated/0/Android/data.
+#
+# Usage: rifm [directory]
+
+BASEDIR=$(dirname "$0")
+RISH=$BASEDIR/rish
+SHFM=$BASEDIR/shfm
+REMOTE=${RIFM_REMOTE:-/data/local/tmp/shfm}
+
+case $1 in
+    -h|--help)
+        printf 'rifm [directory] (default: /storage/emulated/0)\n'
+        exit 0
+    ;;
+esac
+
+[ -f "$RISH" ] || { printf 'rifm: %s not found\n' "$RISH"; exit 1; }
+[ -f "$SHFM" ] || { printf 'rifm: %s not found\n' "$SHFM"; exit 1; }
+
+dir=${1:-/storage/emulated/0}
+
+quote() {
+    # single quote escape for embedding in a remote '...' string
+    printf %s "$1" | sed "s/'/'\\\\''/g"
+}
+
+# Grab the terminal size locally for rish builds that do not forward it.
+set -- $(stty size 2>/dev/null)
+lines=${1:-24} cols=${2:-80}
+
+# Put the local terminal in raw mode. Newer rish builds do this themselves
+# (and restore it), but doing it here also keeps single-key input working
+# with older rish builds that do not manage the terminal.
+tty_state=$(stty -g 2>/dev/null)
+[ -n "$tty_state" ] && stty -icanon -echo -ixon 2>/dev/null
+trap '[ -n "$tty_state" ] && stty "$tty_state" 2>/dev/null' EXIT INT TERM HUP
+
+# Never copy the local (Termux) environment to the remote process so that
+# the remote shell gets a predictable, system-like environment no matter
+# which backend Shizuku is running on (adb or root).
+RISH_PRESERVE_ENV=0
+export RISH_PRESERVE_ENV
+
+# Install shfm somewhere readable by the remote shell (root or shell uid).
+"$RISH" -c "rm -f '$REMOTE'; umask 077; cat > '$REMOTE' && chmod 755 '$REMOTE'" < "$SHFM" || {
+    printf 'rifm: rish failed, is Shizuku running?\n'
+    exit 1
+}
+
+remote_env="LINES=$lines COLUMNS=$cols"
+remote_env="$remote_env HOME=/data/local/tmp"
+remote_env="$remote_env XDG_DATA_HOME=/data/local/tmp/.local/share"
+remote_env="$remote_env XDG_CACHE_HOME=/data/local/tmp/.cache"
+remote_env="$remote_env USER=\$(id -un)"
+
+"$RISH" -c "export $remote_env; exec sh '$REMOTE' '$(quote "$dir")'"
