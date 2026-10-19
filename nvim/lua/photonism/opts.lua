@@ -60,6 +60,11 @@ if vim.fn.has 'win32' == 1 then
   vim.opt.shellxquote = ''
 end
 
+-- Prefer Termux clipboard if available
+if vim.fn.executable 'termux-clipboard-get' == 1 then
+  vim.g.clipboard = 'termux'
+end
+
 -- ┌──────────┐
 -- │ Autocmds │
 -- └──────────┘
