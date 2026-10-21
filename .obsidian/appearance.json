@@ -1,6 +1,6 @@
 {
-  "accentColor": "#4bd45f"
+  "accentColor": "#4bd45f",
   "cssTheme": "Baseline",
   "showRibbon": false,
-  "showViewHeader": false,
+  "showViewHeader": false
 }
