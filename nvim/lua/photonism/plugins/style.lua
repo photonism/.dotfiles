@@ -21,7 +21,8 @@ return {
   -- │ Colorscheme │
   -- └─────────────┘
   {
-    'ThorstenRhau/token',
+    'lunacookies/vim-colors-xcode',
+    -- 'ThorstenRhau/token',
     -- 'projekt0n/github-nvim-theme',
     -- 'Mofiqul/adwaita.nvim',
 
@@ -31,11 +32,12 @@ return {
     config = function()
       -- apply the colorscheme
 
-      vim.cmd 'colorscheme token'
+      vim.cmd 'colorscheme xcodelighthc'
+      -- vim.cmd 'colorscheme token'
       -- vim.cmd 'colorscheme github_light'
       -- vim.cmd 'colorscheme adwaita'
 
-      vim.o.background = 'light'
+      -- vim.o.background = 'light'
 
       -- ┌────────┐
       -- │ Termux │
